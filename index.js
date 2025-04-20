@@ -20,6 +20,10 @@ const URL=process.env.MONGO_URL;
 connectMongoDb(URL);
 
 //Routes
+app.get('/', (req, res) => {
+    res.send('Welcome to the Election API!');
+});
+
 app.use('/api/election_analysis',electionAnalysisRouter);
 app.use('/api/election_prediction',electionPredictionnRouter);
 app.use('/api/leader_analysis',LeaderAnalysisRouter);

@@ -8,7 +8,10 @@ const LeaderAnalysisRouter=require('./router/leader_analysis');
 
 const app=express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://client-inky-six.vercel.app'  
+}));
+
 
 //MiddleWare
 app.use(express.json());

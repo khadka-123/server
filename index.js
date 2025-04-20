@@ -9,7 +9,7 @@ const LeaderAnalysisRouter=require('./router/leader_analysis');
 const app=express();
 
 app.use(cors({
-  origin: ["https://twitter-sentiment-analysis-six.vercel.app"],
+  origin: "https://twitter-sentiment-analysis-six.vercel.app",
   methods: ["POST", "GET"],
   credentials: true
 }));

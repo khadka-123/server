@@ -1,11 +1,11 @@
-const express=require('express');
-require('dotenv').config();
-const cors=require('cors');
 const connectMongoDb=require('./connection');
 const electionAnalysisRouter=require('./router/election_analysis');
 const electionPredictionnRouter=require('./router/election_prediction');
 const LeaderAnalysisRouter=require('./router/leader_analysis');
+require('dotenv').config();
 
+const express=require('express');
+const cors=require('cors');
 const app=express();
 
 app.use(cors());

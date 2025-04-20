@@ -7,6 +7,7 @@ const electionPredictionnRouter=require('./router/election_prediction');
 const LeaderAnalysisRouter=require('./router/leader_analysis');
 
 const app=express();
+app.use(express.static('public'));
 
 const allowedOrigins = [
   'https://client-inky-six.vercel.app',

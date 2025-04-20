@@ -8,10 +8,24 @@ const LeaderAnalysisRouter=require('./router/leader_analysis');
 
 const app=express();
 
+const allowedOrigins = [
+  'https://client-inky-six.vercel.app',
+  'https://twitter-sentiment-analysis-six.vercel.app',
+];
+
 app.use(cors({
-  origin: "https://client-inky-six.vercel.app",
-  methods: ["GET", "POST"],
-  credentials: true
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    callback(new Error(`CORS policy: origin ${origin} not allowed`));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true,               
+  optionsSuccessStatus: 204       
 }));
 
 

@@ -47,9 +47,9 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Election API!');
 });
 
-app.use('/api/election_analysis',electionAnalysisRouter);
-app.use('/api/election_prediction',electionPredictionnRouter);
-app.use('/api/leader_analysis',LeaderAnalysisRouter);
+app.use('/election_analysis',electionAnalysisRouter);
+app.use('/election_prediction',electionPredictionnRouter);
+app.use('/leader_analysis',LeaderAnalysisRouter);
 
 
 //server

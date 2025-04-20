@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "cross-env NODE_ENV=test jest",
     "test:unit": "cross-env NODE_ENV=test jest __tests__/unit.test.js",
     "test:integration": "cross-env NODE_ENV=test jest __tests__/integration.test.js"

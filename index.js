@@ -26,6 +26,8 @@ app.use('/api/leader_analysis',LeaderAnalysisRouter);
 
 
 //server
-app.listen(PORT, () => { 
-    console.log(`Server is listening on port ${PORT}`);
-}); 
+// app.listen(PORT, () => { 
+//     console.log(`Server is listening on port ${PORT}`);
+// }); 
+
+module.export=app;

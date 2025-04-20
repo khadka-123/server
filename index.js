@@ -7,28 +7,30 @@ const electionPredictionnRouter=require('./router/election_prediction');
 const LeaderAnalysisRouter=require('./router/leader_analysis');
 
 const app=express();
-app.use(express.static('public'));
 
-const allowedOrigins = [
-  'https://client-inky-six.vercel.app',
-  'https://twitter-sentiment-analysis-six.vercel.app',
-];
+app.use(cors());
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) return callback(null, true);  
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-    // For testing, temporarily allow all origins
-    // callback(new Error(`CORS policy: origin ${origin} not allowed`));
-    callback(null, true);  // Allow all origins
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  credentials: true,               
-  optionsSuccessStatus: 204       
-}));
+
+
+
+// const allowedOrigins = [
+//   'https://client-inky-six.vercel.app',
+//   'https://twitter-sentiment-analysis-six.vercel.app',
+// ];
+
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     if (!origin) return callback(null, true);  
+//     if (allowedOrigins.includes(origin)) {
+//       return callback(null, true);
+//     }
+//     callback(null, true);  
+//   },
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+//   credentials: true,               
+//   optionsSuccessStatus: 204       
+// }));
 
 
 

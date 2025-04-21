@@ -8,7 +8,13 @@ const express=require('express');
 const cors=require('cors');
 const app=express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://client-inky-six.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 
 

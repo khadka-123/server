@@ -14,33 +14,8 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 };
-app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
-
-
-
-
-// const allowedOrigins = [
-//   'https://client-inky-six.vercel.app',
-//   'https://twitter-sentiment-analysis-six.vercel.app',
-// ];
-
-// app.use(cors({
-//   origin: (origin, callback) => {
-//     if (!origin) return callback(null, true);  
-//     if (allowedOrigins.includes(origin)) {
-//       return callback(null, true);
-//     }
-//     callback(null, true);  
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-//   credentials: true,               
-//   optionsSuccessStatus: 204       
-// }));
-
-
-
+app.use(cors(corsOptions));
 
 //MiddleWare
 app.use(express.json());

@@ -10,11 +10,12 @@ const app=express();
 
 const corsOptions = {
   origin: 'https://client-inky-six.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 };
-
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 
 

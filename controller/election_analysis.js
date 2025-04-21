@@ -1,4 +1,5 @@
 const Tweet = require('../model/election_prediction_model');
+
 const ElectionAnalysisModel = require('../model/election_analysisModel');
 
 async function handleElectionAnalysis(req, res) {
@@ -80,6 +81,9 @@ async function handleElectionAnalysis(req, res) {
     res.status(500).json({ success: false, message: 'Error fetching election analysis data' });
   }
 };
+
+
+//Ezekiel
 
 function getPartyFromUsername(tweetText = '') {
   const lowerText = tweetText.toLowerCase();
